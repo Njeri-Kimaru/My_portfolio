@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mercy Njeri Kimaru · Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #f5f0e8;
+      --bg2: #ede8df;
+      --bg3: #e4ddd2;
+      --green: #6b5c45;
+      --green-dim: #8a7560;
+      --green-glow: rgba(107,92,69,0.12);
+      --green-border: rgba(107,92,69,0.3);
+      --text: #2c2416;
+      --muted: #7a6e60;
+      --card-bg: #faf7f2;
+      --card-border: rgba(107,92,69,0.14);
+      --cream: #F0EDE6;
+      --warm-white: #F7F4EF;
+      --brown-dark: #2C2416;
+      --brown-mid: #5C4A2A;
+      --brown-light: #8B7355;
+      --brown-muted: #A89880;
+      --accent: #3D3120;
+      --tag-bg: #E8E2D8;
+      --border: #D4CAB8;
+      --card-bg: #FAFAF7;
+      --link: #4A3728;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--brown-dark);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      background: rgba(245,240,232,0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      width: 100%;
+      padding: 0 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--green);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .nav-logo span { color: var(--text); }
+    nav ul { list-style: none; display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    nav ul a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+    }
+    nav ul a:hover, nav ul a.active { color: var(--green); }
+
+    /* ── HERO ── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 2.5rem 4rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 4rem;
+    }
+    .hero-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--green);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block;
+      width: 24px; height: 2px;
+      background: var(--green);
+    }
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      overflow: visible;
+    }
+    h1 span.accent { display: block; }
+    h1 .accent { color: var(--green); }
+    .hero-role {
+      font-family: 'Space Mono', monospace;
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .cursor {
+      display: inline-block;
+      width: 2px; height: 1em;
+      background: var(--green);
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+    .hero-bio {
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 520px;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ── HERO SOCIAL ICONS ── */
+    .hero-socials {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .social-icon-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px; height: 42px;
+      border-radius: 8px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      color: var(--muted);
+      text-decoration: none;
+      transition: all 0.25s;
+      font-size: 1.1rem;
+    }
+    .social-icon-btn:hover {
+      border-color: var(--green-border);
+      color: var(--green);
+      box-shadow: 0 0 16px var(--green-glow);
+      transform: translateY(-2px);
+    }
+    .social-icon-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: 6px;
+      font-family: 'Arial', sans-serif;
+      font-weight: 700;
+      font-size: 0.875rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.25s;
+      letter-spacing: 0.03em;
+    }
+    .btn-primary { background: var(--green); color: #f5f0e8; border: 2px solid var(--green); }
+    .btn-primary:hover { background: transparent; color: var(--green); box-shadow: 0 0 20px var(--green-glow); }
+    .btn-outline { background: transparent; color: var(--green); border: 2px solid var(--green-border); }
+    .btn-outline:hover { border-color: var(--green); box-shadow: 0 0 20px var(--green-glow); }
+
+    /* ── AVATAR ── */
+    .hero-avatar { position: relative; width: 320px; height: 320px; flex-shrink: 0; }
+    .avatar-ring {
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      background: conic-gradient(var(--green) 270deg, transparent 270deg) border-box;
+      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      animation: spin 8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .avatar-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: var(--bg3);
+      border: 4px solid var(--green-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .avatar-inner img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+  /* ── SECTION TEMPLATE ── */
+  section {
+    padding: 6rem 3.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Wrapper to allow full-width bg colors but centered content */
+  .section-wrapper {
+    width: 100%;
+  }
+  .section-wrapper-alt {
+    width: 100%;
+    background: var(--warm-white);
+  }
+  .section-wrapper-dark {
+    width: 100%;
+    background: var(--brown-dark);
+  }
+
+  .section-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    margin-bottom: 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .section-label::before {
+    content: '';
+    width: 2rem;
+    height: 1px;
+    background: var(--brown-light);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: var(--brown-dark);
+    margin-bottom: 3rem;
+    line-height: 1.15;
+  }
+
+  hr.divider {
+    display: none;
+  }
+
+  /* Cute section separator */
+  .section-sep {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-sep::before,
+  .section-sep::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border));
+  }
+  .section-sep::after {
+    background: linear-gradient(to left, transparent, var(--border));
+  }
+  .section-sep-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.65rem;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0.15em;
+    color: var(--brown-muted);
+    text-transform: uppercase;
+  }
+  .section-sep-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--brown-light);
+    opacity: 0.5;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    /* layout handled by about-outer-card */
+  }
+  
+  .about-outer-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 20px rgba(44,36,22,0.06);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .about-text p {
+    color: var(--brown-mid);
+    margin-bottom: 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .about-right { }
+
+  .cert-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .cert-icon {
+    width: 36px; height: 36px;
+    background: var(--brown-dark);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: var(--cream);
+    font-size: 1rem;
+  }
+
+  .cert-info h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--brown-dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .cert-info p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--brown-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--warm-white); }
+
+  .skills-outer-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 20px rgba(44,36,22,0.06);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .skill-group {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem;
+  }
+
+  .skill-group h4 {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    margin-bottom: 1rem;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: var(--brown-mid);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  /* ── EXPERIENCE ── */
+  .exp-outer-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 20px rgba(44,36,22,0.06);
+  }
+
+  .exp-timeline { max-width: 100%; }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .exp-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .exp-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--brown-light);
+    letter-spacing: 0.05em;
+    padding-top: 0.25rem;
+    line-height: 1.5;
+  }
+
+  .exp-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+    margin-bottom: 0.25rem;
+  }
+
+  .exp-content .exp-org {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--brown-light);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+  }
+
+  .exp-content ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .exp-content ul li {
+    font-size: 0.88rem;
+    color: var(--brown-mid);
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.6rem;
+    line-height: 1.7;
+  }
+
+  .exp-content ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--brown-light);
+    font-size: 0.75rem;
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--warm-white); }
+
+  .projects-outer-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 20px rgba(44,36,22,0.06);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .project-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(44,36,22,0.08);
+  }
+
+  .project-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .project-lang {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-light);
+    background: var(--tag-bg);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+  }
+
+  .project-privacy {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    color: var(--brown-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .project-card h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .project-card h3 a:hover { color: var(--brown-mid); }
+
+  .project-card p {
+    font-size: 0.82rem;
+    color: var(--brown-mid);
+    flex: 1;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  .project-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+  }
+
+  .project-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--brown-muted);
+    letter-spacing: 0.05em;
+  }
+
+  .project-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--brown-dark);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: opacity 0.2s;
+  }
+
+  .project-link:hover { opacity: 0.7; }
+
+  .featured-badge {
+    display: inline-block;
+    background: var(--brown-dark);
+    color: var(--cream);
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    margin-bottom: 0.7rem;
+  }
+
+  /* ── EDUCATION ── */
+  .edu-outer-card {
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2.5rem;
+    box-shadow: 0 2px 20px rgba(44,36,22,0.06);
+  }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+  }
+
+  .edu-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.8rem;
+  }
+
+  .edu-card .edu-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--brown-light);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.6rem;
+  }
+
+  .edu-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--brown-dark);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .edu-card .edu-inst {
+    font-size: 0.8rem;
+    color: var(--brown-mid);
+    margin-bottom: 0.8rem;
+  }
+
+  .edu-card .edu-courses {
+    font-size: 0.78rem;
+    color: var(--brown-light);
+    line-height: 1.6;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: var(--brown-dark);
+    color: var(--cream);
+  }
+
+  #contact .section-label { color: var(--brown-muted); }
+  #contact .section-label::before { background: var(--brown-muted); }
+
+  #contact .section-title { color: var(--cream); }
+
+  .contact-inner {
+    display: flex;
+    gap: 5rem;
+    align-items: flex-start;
+  }
+
+  .contact-left { flex: 1; }
+  .contact-left p {
+    color: var(--brown-muted);
+    font-size: 0.92rem;
+    max-width: 420px;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .contact-details { list-style: none; }
+  .contact-details li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    color: var(--brown-muted);
+  }
+
+  .contact-details a {
+    color: var(--cream);
+    text-decoration: none;
+  }
+
+  .contact-details a:hover { opacity: 0.7; }
+
+  .contact-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-muted);
+    min-width: 70px;
+  }
+
+  .contact-right {
+    flex-shrink: 0;
+    text-align: center;
+  }
+
+  .contact-big {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: rgba(240,237,230,0.08);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    user-select: none;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--brown-dark);
+    border-top: 1px solid rgba(240,237,230,0.08);
+    padding: 1.5rem 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  footer p {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.62rem;
+    color: var(--brown-muted);
+    letter-spacing: 0.08em;
+  }
+
+  footer a {
+    color: var(--brown-muted);
+    text-decoration: none;
+  }
+
+  footer a:hover { color: var(--cream); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag  { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+  .hero-role { animation: fadeUp 0.6s ease both; animation-delay: 0.2s; }
+  .hero-name { animation: fadeUp 0.6s ease both; animation-delay: 0.3s; }
+  .hero-bio  { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+  .hero-socials { animation: fadeUp 0.6s ease both; animation-delay: 0.5s; }
+  .cta-btn   { animation: fadeUp 0.6s ease both; animation-delay: 0.6s; }
+  .hero-right { animation: fadeUp 0.8s ease both; animation-delay: 0.3s; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #home { flex-direction: column; padding: 6rem 1.5rem 3rem; }
+    .hero-img-wrap { width: 220px; height: 220px; }
+    section { padding: 4rem 1.5rem; }
+    hr.divider { margin: 0 1.5rem; }
+    #about { grid-template-columns: 1fr; gap: 2rem; }
+    .about-outer-card { grid-template-columns: 1fr; gap: 2rem; padding: 1.5rem; }
+    .skills-outer-card, .projects-outer-card, .edu-outer-card, .exp-outer-card { padding: 1.2rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .contact-inner { flex-direction: column; gap: 2rem; }
+    .contact-big { display: none; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav>
+<div class="nav-inner">
+  <div class="nav-logo"><span>&lt;/&gt;</span> My <span style="color:var(--green)">Portfolio</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
+</nav>
+
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-tag fade-in">AI/ML Engineer · Researcher · Biomedical Engineer</p>
+      <p class="hero-role fade-in delay-2"><span></span><span class="cursor"></span></p>
+      <h1 class="fade-in delay-1" style="overflow:visible; padding-bottom:0.15em;">
+          MERCY,<br>
+          <span class="accent">Njeri Kimaru</span>
+      </h1>
+      <p class="hero-bio fade-in delay-3">
+        I'm an AI/ML engineer with a dual foundation in <strong>Biomedical Engineering</strong> and artificial intelligence,
+        specialising in multimodal data fusion, RAG systems, and omics-integrated machine learning for disease research.
+        Currently contributing to the <strong>Fedora Project.</strong>
+      </p>
+
+      <!-- Social icons -->
+      <div class="hero-socials fade-in delay-4">
+        <!-- GitHub -->
+        <a href="https://github.com/Njeri-Kimaru" target="_blank" class="social-icon-btn" title="GitHub">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <!-- LinkedIn -->
+        <a href="https://www.linkedin.com/in/njeri-kimaru-025141237/" target="_blank" class="social-icon-btn" title="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <!-- Mastodon -->
+        <a href="https://mastodon.social/@iamnjeri" target="_blank" class="social-icon-btn" title="Mastodon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.268 5.313c-.35-2.578-2.617-4.61-5.228-5.093C17.69.138 15.925.0 12.177.0h-.05c-3.747 0-5.512.138-5.863.22-2.475.461-4.862 2.3-5.415 4.931C.877 7.17.71 8.763.763 10.375c-.074 2.318-.056 4.635.236 6.937.35 2.4 2.506 4.338 4.947 4.893 2.556.57 5.224.637 7.839.186 2.072-.36 4.087-1.084 5.854-2.252a.077.077 0 0 0 .032-.04V12.6a.076.076 0 0 0-.032-.062C16.964 11.24 13.617 10.25 10.2 10.5c-1.738.13-3.35.78-4.584 1.87a5.374 5.374 0 0 0-1.86 4.14c-.02 1.1.28 2.17.9 3.06 1.37 1.98 3.82 2.95 6.2 2.98 2.5.04 5.03-.74 6.86-2.34v2.05c-1.83 1.1-3.94 1.74-6.1 1.74-4.85 0-8.77-2.57-10.5-6.94C.25 15.64.07 13.27.14 10.9.08 8.37.28 5.84 1.07 3.44 2.17.36 5.06-1.56 8.2-.93c.47.1.93.24 1.38.42l.33.14c.32.14.63.3.92.48.3.18.58.39.84.62.52.47.94 1.03 1.24 1.66.3.62.46 1.3.47 1.98v6.4c-.07-.67-.2-1.34-.38-1.99-.42-1.55-1.3-2.95-2.52-3.96-1.22-1.01-2.77-1.61-4.37-1.72-2.06-.14-4.1.5-5.63 1.82a7.12 7.12 0 0 0-2.5 5.43c-.02 1.46.38 2.9 1.16 4.1 1.62 2.5 4.55 3.87 7.48 3.78 2.93-.09 5.78-1.62 7.27-4.18.38-.65.66-1.36.84-2.09.18-.72.27-1.47.27-2.22V5.82c.78.52 1.49 1.14 2.1 1.86.3.35.56.73.78 1.13.23.4.42.83.55 1.28.14.45.22.92.25 1.39.03.47.03.95-.01 1.42-.03.47-.1.93-.2 1.38.21-.9.34-1.83.38-2.77.06-1.15-.02-2.3-.2-3.42z"/></svg>
+        </a>
+        <!-- X / Twitter -->
+        <a href="https://x.com/Kimaru_Njeri" target="_blank" class="social-icon-btn" title="X (Twitter)">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+        </a>
+        <!-- Matrix -->
+        <a href="https://matrix.to/#/@njeri_kimaru:matrix.org" target="_blank" class="social-icon-btn" title="Matrix Chat">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033a3.312 3.312 0 0 1 1.117-1.024 3.14 3.14 0 0 1 1.56-.38c.56 0 1.077.107 1.547.32.47.214.822.607 1.053 1.183.26-.44.637-.823 1.13-1.148a3.09 3.09 0 0 1 1.714-.496c.498 0 .955.063 1.372.19.418.127.778.334 1.08.624.302.29.537.662.703 1.117.166.455.25.998.25 1.627v6.276h-2.44V12.59c0-.316-.012-.608-.033-.872a1.963 1.963 0 0 0-.16-.69 1.075 1.075 0 0 0-.427-.462 1.44 1.44 0 0 0-.753-.171 1.48 1.48 0 0 0-.775.19 1.4 1.4 0 0 0-.496.513 2.175 2.175 0 0 0-.26.734 5.126 5.126 0 0 0-.07.867v5.163h-2.44V12.59c0-.295-.008-.58-.024-.853a2.15 2.15 0 0 0-.14-.696 1.077 1.077 0 0 0-.413-.47 1.378 1.378 0 0 0-.758-.179c-.244 0-.48.054-.71.162a1.55 1.55 0 0 0-.545.457 2.09 2.09 0 0 0-.337.728 3.82 3.82 0 0 0-.113.97v5.337H5.23V7.81zm16.293-7.26V24H21.72v-.55h1.648V.55H21.72V0H24v24h-2.28v-.55h-1.648V.55h1.648V0z"/></svg>
+        </a>
+        <a class="social-btn" href="mailto:njerikimaru7@gmail.com" title="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+
+      </div>
+
+      <div class="hero-btns fade-in delay-5">
+        <a href="https://github.com/Njeri-Kimaru" class="btn btn-primary">⬇ View Github</a>
+      </div>
+    </div>
+
+    <!-- AVATAR -->
+    <div class="hero-avatar">
+      <div class="avatar-ring"></div>
+      <div class="avatar-inner">
+        <img src="image.png" alt="Njeri Kimaru">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> about <span class="section-sep-dot"></span></span></div>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-outer-card">
+  <div class="about-text">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title" style="margin-bottom:1.5rem">Research Scientist &amp;<br>AI/ML Engineer</h2>
+    <p>I hold a B.Tech in Biomedical Engineering from the Technical University of Mombasa and have completed advanced training in Data Science, AI &amp; ML at LuxDevHQ, Nairobi.</p>
+    <p>My work sits at the intersection of biological domain knowledge and engineering discipline — building production-ready AI systems that span RAG architectures, deep generative models, omics-integrated ML, and containerised deployment.</p>
+    <p>I bring rare cross-disciplinary fluency: I understand the biology <em>and</em> can build the pipelines. From CNN-based neuroimaging classifiers to multimodal cancer analysis fusing genomics and imaging, my projects reflect a commitment to reproducible, open science.</p>
+    <p>I'm based in <strong>Nairobi, Kenya</strong>.</p>
+  </div>
+
+  <div class="about-right">
+    <p class="section-label" style="margin-top:3.8rem">Certifications &amp; Affiliations</p>
+    <br>
+
+    <div class="cert-card">
+      <div class="cert-icon">🎓</div>
+      <div class="cert-info">
+        <h4>Software Development Certification</h4>
+        <p>Tech4Dev &nbsp;·&nbsp; Certified</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🔬</div>
+      <div class="cert-info">
+        <h4>Data Science, AI &amp; Machine Learning</h4>
+        <p>LuxDevHQ, Nairobi &nbsp;·&nbsp; June – Nov 2025</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">🌐</div>
+      <div class="cert-info">
+        <h4>Open Source Contributor — Fedora Project</h4>
+        <p>containers/ramalama &nbsp;·&nbsp; Outreachy 2026</p>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-icon">⚗️</div>
+      <div class="cert-info">
+        <h4>B.Tech Biomedical Engineering</h4>
+        <p>Technical University of Mombasa &nbsp;·&nbsp; Dec 2025</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> skills <span class="section-sep-dot"></span></span></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">Technical Expertise</p>
+  <h2 class="section-title">Skills &amp; Stack</h2>
+  <div class="skills-outer-card">
+  <div class="skills-grid">
+    <div class="skill-group">
+      <h4>ML / AI</h4>
+      <div class="skill-tags">
+        <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span>
+        <span class="tag">RAG Systems</span><span class="tag">LLMs / SLMs</span><span class="tag">Deep Generative Models</span>
+        <span class="tag">Bayesian Modelling</span><span class="tag">Causal Inference</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Omics &amp; Bio</h4>
+      <div class="skill-tags">
+        <span class="tag">Single-cell Omics</span><span class="tag">Genomics Feature Eng.</span>
+        <span class="tag">Multimodal Omics+Imaging Fusion</span><span class="tag">Bioinformatics Pipelines</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Computational Neuroscience</h4>
+      <div class="skill-tags">
+        <span class="tag">Neuroimaging (MRI/CNN)</span><span class="tag">Neuropathology Image Classification</span>
+        <span class="tag">Brain Tumour Detection</span><span class="tag">Disease Trajectory Modelling</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Cloud &amp; Infrastructure</h4>
+      <div class="skill-tags">
+        <span class="tag">AWS</span><span class="tag">GCP</span><span class="tag">Docker</span><span class="tag">Podman</span>
+        <span class="tag">OCI Registries (ghcr.io)</span><span class="tag">Linux (Fedora)</span>
+        <span class="tag">Git</span><span class="tag">GitHub CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Languages</h4>
+      <div class="skill-tags">
+        <span class="tag">Python</span><span class="tag">JavaScript / TypeScript</span>
+        <span class="tag">Bash</span><span class="tag">SQL</span><span class="tag">R</span>
+      </div>
+    </div>
+    <div class="skill-group">
+      <h4>Tools &amp; Frameworks</h4>
+      <div class="skill-tags">
+        <span class="tag">RamaLama</span><span class="tag">Jupyter</span><span class="tag">HackMD</span>
+        <span class="tag">Docusaurus</span><span class="tag">Docling</span><span class="tag">LaTeX</span>
+        <span class="tag">Power BI</span><span class="tag">PostgreSQL</span><span class="tag">Ubidots</span>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> experience <span class="section-sep-dot"></span></span></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">Work History</p>
+  <h2 class="section-title">Experience</h2>
+  <div class="exp-outer-card">
+  <div class="exp-timeline">
+
+    <div class="exp-item">
+      <div class="exp-date">Dec 2025 — May 2026</div>
+      <div class="exp-content">
+        <h3>AI/ML Engineering Intern</h3>
+        <p class="exp-org">LuxDevHQ · Nairobi, Kenya</p>
+        <ul>
+          <li>Designed and deployed 4+ end-to-end ML pipelines across classification, regression, and time-series forecasting tasks, reducing model iteration time by ~30% through standardised pipeline templates.</li>
+          <li>Built multimodal data ingestion and feature engineering workflows for structured and unstructured datasets, processing 50,000+ records with validated preprocessing and normalisation pipelines.</li>
+          <li>Trained and evaluated deep learning models using PyTorch and TensorFlow, achieving >85% classification accuracy on biomedical and tabular datasets across multiple projects.</li>
+          <li>Deployed models to cloud environments (AWS/GCP), managing the full lifecycle from experimentation to production-ready containerised inference.</li>
+          <li>Collaborated with a team of 6 analysts and engineers, presenting model performance findings across 3 project cycles.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-date">Mar 2026 — Apr 2026</div>
+      <div class="exp-content">
+        <h3>Open Source Contributor — LLM &amp; RAG Systems</h3>
+        <p class="exp-org">containers/ramalama · Fedora Project (Outreachy Contribution Phase)</p>
+        <ul>
+          <li>Built a production-facing SLM using RamaLama with a RAG architecture over Fedora RPM packaging guidelines — full pipeline from document ingestion to containerised model inference.</li>
+          <li>Deployed model pipelines using OCI/container registries (Podman, ghcr.io), converting and pushing Mistral models from Ollama to OCI format across transport protocols: ollama://, hf://, modelscope://, oci://.</li>
+          <li>Worked with Docling CLI to parse multilingual scanned documents into markdown/JSON formats for structured ingestion.</li>
+          <li>Documented model behaviour and RAG pipeline outputs collaboratively via HackMD and Matrix, coordinating across an international open source team.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> projects <span class="section-sep-dot"></span></span></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">GitHub Portfolio</p>
+  <h2 class="section-title">Projects</h2>
+  <div class="projects-outer-card">
+  <div class="projects-grid">
+
+    <!-- Featured -->
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python · Jupyter</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <div class="featured-badge">⭐ Featured</div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Health-RAG-project-end-to-end-" target="_blank">Health RAG — End-to-End</a></h3>
+      <p>Complete end-to-end RAG system using LLMs to retrieve and synthesise information from health-domain documents. Reduced document query time by ~60% using vector retrieval with semantic embeddings.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2026</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Health-RAG-project-end-to-end-" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <div class="featured-badge">⭐ Featured</div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Travel-and-Tourism-RAG" target="_blank">Travel &amp; Tourism RAG</a></h3>
+      <p>End-to-end RAG project with travel and tourism context — full pipeline with REST API, document ingestion, and LLM-powered retrieval.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2026</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Travel-and-Tourism-RAG" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python · In Progress</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <div class="featured-badge">🔬 Research</div>
+      <h3><a href="https://github.com/Njeri-Kimaru2026" target="_blank">Multimodal Cancer Analysis</a></h3>
+      <p>Developing a multimodal ML model jointly learning from medical imaging data and genomic/omics profiles. Implements modality-specific encoders with attention-based late fusion for cross-modal interactions.</p>
+      <div class="project-footer">
+        <span class="project-date">2026 — In Progress</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru2026" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Brain-tumor-detection" target="_blank">Brain Tumor Detection</a></h3>
+      <p>CNN classifier achieving >90% accuracy distinguishing healthy from tumorous brain MRI scans. Applied transfer learning and data augmentation, improving sensitivity on the minority class by ~18%.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Brain-tumor-detection" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Skin-cancer-detection-using-CNN" target="_blank">Skin Cancer Detection (CNN)</a></h3>
+      <p>CNN model classifying benign vs. malignant skin tumour images from dermoscopy data. Open-sourced under GNU Affero GPL v3.0, reflecting a commitment to reproducible, shared science.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Skin-cancer-detection-using-CNN" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public · GNU Affero GPL v3</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/crypto-project" target="_blank">Crypto Buy/Sell Classifier</a></h3>
+      <p>ML model using Binance data to predict whether a person should buy, hold, or sell — time-series and classification pipeline for financial decision support.</p>
+      <div class="project-footer">
+        <span class="project-date">Mar 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/crypto-project" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public · GNU GPL v3</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Crypto-classifier-project" target="_blank">Crypto Classifier Project</a></h3>
+      <p>Predicts whether to buy or sell on Binance — standalone classifier project with full preprocessing and model evaluation pipeline.</p>
+      <div class="project-footer">
+        <span class="project-date">Dec 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Crypto-classifier-project" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Semantic-search-embeddings" target="_blank">Semantic Search Embeddings</a></h3>
+      <p>Reusable sentence and document embedding library for semantic search and recommendation, serving as the retrieval backbone for two downstream RAG projects.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Semantic-search-embeddings" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/AI-EMBEDDINGS" target="_blank">AI Embeddings</a></h3>
+      <p>Project to convert words into embeddings and store them in a vector database — foundational vector storage and retrieval work underpinning RAG systems.</p>
+      <div class="project-footer">
+        <span class="project-date">Apr 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/AI-EMBEDDINGS" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/LLM-Embeddings-project" target="_blank">LLM Embeddings Project</a></h3>
+      <p>Exploration of LLM-based embedding strategies for downstream NLP tasks, semantic search, and retrieval-augmented generation.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/LLM-Embeddings-project" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Jupyter Notebook</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/CNN-environmental-waste-project" target="_blank">CNN Environmental Waste Project</a></h3>
+      <p>CNN-based image classification project for environmental waste categorisation — applied computer vision for sustainability.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/CNN-environmental-waste-project" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">HTML · JavaScript</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Docling_ocr_task" target="_blank">Docling OCR Task</a></h3>
+      <p>Focuses on Docling OCR — using the Docling CLI to parse multilingual scanned documents into structured formats (markdown or JSON) before translation.</p>
+      <div class="project-footer">
+        <span class="project-date">Apr 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Docling_ocr_task" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">HTML</span>
+        <span class="project-privacy">Public · ⭐1</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Docling_cli" target="_blank">Docling CLI</a></h3>
+      <p>Parses PDF format into other formats such as HTML, markdown, and JSON using the Docling command-line interface — a key tool in the Outreachy Fedora RAG pipeline.</p>
+      <div class="project-footer">
+        <span class="project-date">Apr 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Docling_cli" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Ramalama_task" target="_blank">RamaLama Task</a></h3>
+      <p>Repo where RamaLama is used to run AI models locally — practical experimentation with the SLM/LLM serving pipeline central to the Fedora Outreachy project.</p>
+      <div class="project-footer">
+        <span class="project-date">Apr 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Ramalama_task" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/End-to-end-customer-prediction-project" target="_blank">Customer Prediction (E2E)</a></h3>
+      <p>End-to-end customer prediction pipeline — full ML lifecycle from data ingestion, feature engineering, model training to evaluation and deployment.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/End-to-end-customer-prediction-project" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/sales-prediction-project-with-deployment-" target="_blank">Sales Prediction with Deployment</a></h3>
+      <p>Sales forecasting model with full deployment pipeline — includes model serialisation, API wrapping, and production-ready containerised inference.</p>
+      <div class="project-footer">
+        <span class="project-date">Feb 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/sales-prediction-project-with-deployment-" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Python</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/lusophone-task-2" target="_blank">Lusophone Task 2</a></h3>
+      <p>Python script to fetch and print the HTTP status codes for a list of URLs from a CSV file — URL health-check automation utility.</p>
+      <div class="project-footer">
+        <span class="project-date">Mar 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/lusophone-task-2" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">HTML · JavaScript</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <h3><a href="https://github.com/Njeri-Kimaru/Lusophone-task-1" target="_blank">Lusophone Task 1</a></h3>
+      <p>JavaScript script to manipulate a JSON object and print it in a human-legible format — foundational data transformation and formatting task.</p>
+      <div class="project-footer">
+        <span class="project-date">Mar 2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru/Lusophone-task-1" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> education <span class="section-sep-dot"></span></span></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label">Academic Background</p>
+  <h2 class="section-title">Education</h2>
+  <div class="edu-outer-card">
+  <div class="edu-grid">
+    <div class="edu-card">
+      <p class="edu-year">Graduated December 2025</p>
+      <h3>B.Tech Biomedical Engineering</h3>
+      <p class="edu-inst">Technical University of Mombasa, Kenya</p>
+      <p class="edu-courses">Bioinformatics · Signal Processing · Medical Imaging · Biostatistics · Machine Learning · Artificial Intelligence · Bayesian Statistics · Computational Neuroscience</p>
+    </div>
+    <div class="edu-card">
+      <p class="edu-year">June – November 2025</p>
+      <h3>Data Science, AI &amp; Machine Learning</h3>
+      <p class="edu-inst">LuxDevHQ, Nairobi, Kenya</p>
+      <p class="edu-courses">Data Analytics · Machine Learning · Deep Learning · Bayesian &amp; Frequentist Statistics · RAG Systems · Cloud Computing with AWS/GCP</p>
+    </div>
+    <div class="edu-card">
+      <p class="edu-year">Tech4Dev · Certified</p>
+      <h3>Software Development Certification</h3>
+      <p class="edu-inst">Tech4Dev</p>
+      <p class="edu-courses">Full software development training covering modern development practices, tools, and industry-ready programming skills.</p>
+    </div>
+    <div class="edu-card">
+      <p class="edu-year">March – April 2026</p>
+      <h3>Open Source Contribution</h3>
+      <p class="edu-inst">Outreachy 2026 · Fedora Project / Red Hat</p>
+      <p class="edu-courses">containers/ramalama · SLM/LLM using RamaLama RAG · Merged PRs · DCO sign-off · International async collaboration</p>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> contact <span class="section-sep-dot"></span></span></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <p class="section-label">Get in Touch</p>
+      <h2 class="section-title">Let's Work Together</h2>
+      <p>I'm open to research collaborations, full-time roles, and open source projects at the intersection of AI/ML and biomedical science. Based in Nairobi, open to relocation to Seattle, WA, and eligible for visa sponsorship.</p>
+      <ul class="contact-details">
+        <li>
+          <span class="contact-label">Email</span>
+          <a href="mailto:njerikimaru7@gmail.com">njerikimaru7@gmail.com</a>
+        </li>
+        <li>
+          <span class="contact-label">Phone</span>
+          <a href="tel:+254705604935">+254 705 604 935</a>
+        </li>
+        <li>
+          <span class="contact-label">Location</span>
+          <span>Nairobi, Kenya</span>
+        </li>
+        <li>
+          <span class="contact-label">GitHub</span>
+          <a href="https://github.com/Njeri-Kimaru" target="_blank">github.com/Njeri-Kimaru</a>
+        </li>
+        <li>
+          <span class="contact-label">LinkedIn</span>
+          <a href="https://linkedin.com/in/njeri-kimaru-025141237" target="_blank">linkedin.com/in/njeri-kimaru-025141237</a>
+        </li>
+      </ul>
+    </div>
+    <div class="contact-right">
+      <p class="contact-big">NJK</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Mercy Njeri Kimaru · AI/ML Engineer · Nairobi, Kenya</p>
+  <p><a href="https://github.com/Njeri-Kimaru" target="_blank">github.com/Njeri-Kimaru</a></p>
+</footer>
+
+<script>
+  /* ── Active nav on scroll ── */
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+
+  /* ── Typing animation ── */
+  const roles = ['AI/ML Engineer', 'Biomedical Engineer', 'Researcher', 'Open Source Contributor'];
+  let ri = 0, ci = 0, deleting = false;
+  const roleEl = document.querySelector('.hero-role');
+  function type() {
+    const word = roles[ri];
+    if (!deleting) {
+      roleEl.firstChild.textContent = word.slice(0, ++ci);
+      if (ci === word.length) { deleting = true; setTimeout(type, 1800); return; }
+    } else {
+      roleEl.firstChild.textContent = word.slice(0, --ci);
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+    }
+    setTimeout(type, deleting ? 50 : 90);
+  }
+  roleEl.innerHTML = '<span></span><span class="cursor"></span>';
+  setTimeout(type, 1000);
+</script>
+
+
+</body>
+</html>
