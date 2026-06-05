@@ -808,6 +808,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
+    <li><a href="#analysis">Analysis</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -938,6 +939,15 @@
   <div class="skills-outer-card">
   <div class="skills-grid">
     <div class="skill-group">
+      <h4>Data Analytics &amp; BI</h4>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Microsoft Excel</span>
+        <span class="tag">Pivot Tables</span><span class="tag">Data Visualisation</span>
+        <span class="tag">Exploratory Data Analysis</span><span class="tag">Statistical Analysis</span>
+        <span class="tag">Dashboard Design</span>
+      </div>
+    </div>
+    <div class="skill-group">
       <h4>ML / AI</h4>
       <div class="skill-tags">
         <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span class="tag">scikit-learn</span>
@@ -1021,6 +1031,47 @@
           <li>Worked with Docling CLI to parse multilingual scanned documents into markdown/JSON formats for structured ingestion.</li>
           <li>Documented model behaviour and RAG pipeline outputs collaboratively via HackMD and Matrix, coordinating across an international open source team.</li>
         </ul>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<div class="section-sep"><span class="section-sep-icon"><span class="section-sep-dot"></span> analysis <span class="section-sep-dot"></span></span></div>
+
+<!-- DATA ANALYSIS -->
+<section id="analysis">
+  <p class="section-label">Dashboards &amp; Analytics</p>
+  <h2 class="section-title">Data Analysis</h2>
+  <div class="projects-outer-card">
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Power BI · DAX</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <div class="featured-badge">📊 Dashboard</div>
+      <h3><a href="https://github.com/Njeri-Kimaru" target="_blank">Kenya Crops Analysis Dashboard</a></h3>
+      <p>Interactive Power BI dashboard analysing crop production trends, yield distributions, and regional agricultural patterns across Kenya. Built with DAX measures, multi-page layout, slicers, and drill-through capabilities — enabling data-driven insights for agricultural planning and policy.</p>
+      <div class="project-footer">
+        <span class="project-date">2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-card-top">
+        <span class="project-lang">Microsoft Excel</span>
+        <span class="project-privacy">Public</span>
+      </div>
+      <div class="featured-badge">📈 Dashboard</div>
+      <h3><a href="https://github.com/Njeri-Kimaru" target="_blank">Jumia Sales Analysis Dashboard</a></h3>
+      <p>Excel analytics dashboard covering Jumia e-commerce sales data — pivot tables, dynamic charts, KPI summaries, and trend analysis for product performance and revenue breakdowns. Full end-to-end analytical workflow from raw data cleaning through to executive-ready visualisation.</p>
+      <div class="project-footer">
+        <span class="project-date">2025</span>
+        <a class="project-link" href="https://github.com/Njeri-Kimaru" target="_blank">GitHub →</a>
       </div>
     </div>
 
@@ -1373,7 +1424,7 @@
   });
 
   /* ── Typing animation ── */
-  const roles = ['AI/ML Engineer', 'Biomedical Engineer', 'Researcher', 'Open Source Contributor'];
+  const roles = ['AI/ML Engineer', 'Data Analyst', 'Biomedical Engineer', 'Researcher', 'Open Source Contributor'];
   let ri = 0, ci = 0, deleting = false;
   const roleEl = document.querySelector('.hero-role');
   function type() {
